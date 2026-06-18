@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チャットボット(chatbot) 動作確認ページ</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      min-height: 100vh;
+    }
+    header {
+      background: #1a1a2e;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header h1 { font-size: 20px; }
+    header span { font-size: 13px; opacity: 0.7; }
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    .notice {
+      background: #fff8e1;
+      border-left: 4px solid #ffc107;
+      padding: 14px 18px;
+      border-radius: 4px;
+      margin-bottom: 32px;
+      font-size: 14px;
+    }
+    .notice strong { display: block; margin-bottom: 4px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 40px; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid #eee;
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .badge-icon { background: #e3f2fd; color: #1565c0; }
+    .badge-embed { background: #e8f5e9; color: #2e7d32; }
+    .badge-button { background: #fce4ec; color: #c62828; }
+    .card h2 { font-size: 16px; margin-bottom: 8px; }
+    .card p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 16px; }
+    .card a {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .card a:hover { opacity: 0.85; }
+    .link-icon { background: #1565c0; color: white; }
+    .link-embed { background: #2e7d32; color: white; }
+    .link-button { background: #c62828; color: white; }
+    .code-section { background: white; border-radius: 12px; padding: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .code-section h2 { font-size: 16px; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    .code-block {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin-bottom: 8px;
+    }
+    .code-block .tag { color: #89b4fa; }
+    .code-block .attr { color: #cba6f7; }
+    .code-block .val { color: #a6e3a1; }
+    .code-label { font-size: 12px; color: #888; margin-bottom: 6px; margin-top: 16px; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<!-- チャットボット(chatbot) スクリプトローダー -->
+<script src="chatbot-loader.js"></script>
+
+<header>
+  <div>
+    <h1>チャットボット(chatbot) 動作確認ページ</h1>
+    <span>スタートアップガイド STEP1 基本設定編 — ローカル確認用</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="notice">
+    <strong>このページについて</strong>
+    チャットボット(chatbot) の3つの設置パターンを確認できます。
+    スクリプトタグ（popup.js）はこのページのすべてに組み込み済みです。
+    管理画面でサポートアクションを設定後、各ページで動作を確認してください。
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="card-badge badge-icon">パターン1</span>
+      <h2>チャットアイコンを設置する</h2>
+      <p>
+        Scriptタグを埋め込むだけで、画面右下にチャットアイコン・吹き出しが表示されます。
+        追加のHTML要素は不要です。
+      </p>
+      <a href="chat-icon.html" class="link-icon">確認ページを開く</a>
+    </div>
+
+    <div class="card">
+      <span class="card-badge badge-embed">パターン2</span>
+      <h2>チャットを埋め込む</h2>
+      <p>
+        ページ内の指定した位置にチャット画面をインラインで埋め込みます。
+        <code>仕様書記載のタグ</code> の div が必要です。
+      </p>
+      <a href="chat-embed.html" class="link-embed">確認ページを開く</a>
+    </div>
+
+    <div class="card">
+      <span class="card-badge badge-button">パターン3</span>
+      <h2>チャットを開く（ボタン）</h2>
+      <p>
+        ボタンをクリックするとチャット画面が開きます。
+        <code>仕様書記載のタグ</code> の button が必要です。
+      </p>
+      <a href="chat-open.html" class="link-button">確認ページを開く</a>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>

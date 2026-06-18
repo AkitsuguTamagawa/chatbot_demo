@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>パターン1: チャットアイコン設置 — チャットボット(chatbot) 確認</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f4ff; color: #333; min-height: 100vh; }
+    header { background: #1565c0; color: white; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 18px; }
+    header a { color: white; font-size: 13px; text-decoration: none; opacity: 0.8; }
+    header a:hover { opacity: 1; }
+    .container { max-width: 760px; margin: 48px auto; padding: 0 20px; }
+    .hero {
+      background: white; border-radius: 16px; padding: 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08); text-align: center; margin-bottom: 28px;
+    }
+    .hero .icon { font-size: 48px; margin-bottom: 16px; }
+    .hero h2 { font-size: 22px; margin-bottom: 12px; color: #1565c0; }
+    .hero p { font-size: 14px; color: #666; line-height: 1.7; }
+    .badge { display: inline-block; background: #e3f2fd; color: #1565c0; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; margin-bottom: 16px; }
+    .step-box { background: white; border-radius: 12px; padding: 24px 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 20px; }
+    .step-box h3 { font-size: 14px; color: #888; margin-bottom: 12px; }
+    .step-box ul { padding-left: 18px; font-size: 14px; line-height: 1.9; color: #444; }
+    .code-block {
+      background: #1e1e2e; color: #a6e3a1;
+      padding: 14px 18px; border-radius: 8px; font-family: monospace; font-size: 13px;
+      margin-top: 12px; overflow-x: auto;
+    }
+    .hint { background: #e3f2fd; border-radius: 8px; padding: 14px 18px; font-size: 13px; color: #1565c0; margin-top: 20px; }
+    .hint strong { display: block; margin-bottom: 4px; }
+    /* ダミーコンテンツ */
+    .dummy { background: white; border-radius: 12px; padding: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .dummy h3 { font-size: 15px; margin-bottom: 10px; }
+    .dummy p { font-size: 13px; color: #777; line-height: 1.8; }
+    .dummy-bar { height: 10px; background: #eee; border-radius: 4px; margin: 8px 0; }
+    .dummy-bar.w80 { width: 80%; }
+    .dummy-bar.w60 { width: 60%; }
+    .dummy-bar.w90 { width: 90%; }
+  </style>
+</head>
+<body>
+
+<!-- チャットボット(chatbot) スクリプトローダー -->
+<script src="chatbot-loader.js"></script>
+
+<header>
+  <h1>パターン1: チャットアイコン設置</h1>
+  <a href="index.html">← 一覧へ戻る</a>
+</header>
+
+<div class="container">
+  <div class="hero">
+    <div class="badge">パターン1 / チャットアイコンを設置する</div>
+    <div class="icon">💬</div>
+    <h2>チャットアイコン確認ページ</h2>
+    <p>
+      Scriptタグのみを埋め込んだシンプルな設置パターンです。<br>
+      管理画面でサポートアクション（チャットアイコンを設置する）を公開すると、<br>
+      画面の右下にチャットアイコンまたは吹き出しが表示されます。
+    </p>
+  </div>
+
+  <div class="step-box">
+    <h3>埋め込みタグ（このページに組み込み済み）</h3>
+    <div class="code-block">&lt;script src="{CHATBOT_SCRIPT_URL}"&gt;&lt;/script&gt;</div>
+    <div class="hint" style="margin-top:14px;">
+      <strong>追加のHTML要素は不要です</strong>
+      このスクリプトタグを埋め込むだけでチャットアイコンが表示されます。<br>
+      表示されない場合は、管理画面でサポートアクションが「公開」状態になっているか確認してください。
+    </div>
+  </div>
+
+
+  <!-- ページの内容を長くしてスクロールで困り度ロジックを確認できるようにする -->
+  <div class="dummy">
+    <h3>ダミーコンテンツ（スクロール確認用）</h3>
+    <p>このコンテンツはスクロール量・滞在時間によるAI困り度ロジックの動作確認用です。</p>
+    <br>
+    <div class="dummy-bar w90"></div>
+    <div class="dummy-bar w60"></div>
+    <div class="dummy-bar w80"></div>
+    <br>
+    <p>チャットボット(chatbot)のスマートハロー機能は、ページの滞在時間やスクロール量からユーザーの「困り度」を算出し、閾値を超えた場合にアイコンや吹き出しを表示します。</p>
+    <br>
+    <div class="dummy-bar w80"></div>
+    <div class="dummy-bar w90"></div>
+    <div class="dummy-bar w60"></div>
+  </div>
+</div>
+</body>
+</html>
